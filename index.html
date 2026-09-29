@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>! Bitcoins | Discord Community</title>
+
+<style>
+:root {
+    --bg: #08090c;
+    --card: #111318;
+    --card2: #171a21;
+    --border: #272b34;
+    --text: #f5f5f5;
+    --muted: #969dab;
+    --gold: #f5a623;
+    --gold-light: #ffd166;
+    --discord: #5865f2;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(circle at 80% 0%, rgba(245,166,35,.14), transparent 30%),
+        radial-gradient(circle at 10% 30%, rgba(88,101,242,.08), transparent 25%),
+        var(--bg);
+    color: var(--text);
+}
+
+/* NAVBAR */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(15px);
+    background: rgba(8,9,12,.82);
+    border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+.nav-container {
+    max-width: 1150px;
+    margin: auto;
+    padding: 17px 22px;
+
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.logo-icon {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        145deg,
+        var(--gold-light),
+        #d98200
+    );
+
+    color: #201506;
+    font-weight: 1000;
+}
+
+.nav-links {
+    margin-left: auto;
+
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+
+    transition: .2s;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+.discord-button {
+    background: var(--discord);
+    color: white;
+
+    padding: 10px 16px;
+
+    border-radius: 9px;
+
+    font-weight: 800;
+    font-size: 13px;
+
+    text-decoration: none;
+
+    box-shadow: 0 8px 25px rgba(88,101,242,.25);
+
+    transition: .2s;
+}
+
+.discord-button:hover {
+    transform: translateY(-2px);
+}
+
+/* HERO */
+
+.hero {
+    max-width: 1150px;
+    margin: auto;
+
+    min-height: 720px;
+
+    padding: 100px 22px;
+
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+
+    align-items: center;
+    gap: 60px;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 7px 12px;
+
+    border-radius: 50px;
+
+    background: rgba(245,166,35,.08);
+    border: 1px solid rgba(245,166,35,.25);
+
+    color: var(--gold-light);
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.status {
+    width: 7px;
+    height: 7px;
+
+    background: #55d88a;
+    border-radius: 50%;
+
+    box-shadow: 0 0 10px #55d88a;
+}
+
+h1 {
+    margin-top: 20px;
+
+    font-size: clamp(48px, 7vw, 82px);
+    line-height: .95;
+
+    letter-spacing: -5px;
+}
+
+.gold {
+    background: linear-gradient(
+        100deg,
+        #fff,
+        var(--gold-light)
+    );
+
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.hero-text {
+    margin-top: 25px;
+
+    max-width: 620px;
+
+    color: var(--muted);
+
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.buttons {
+    display: flex;
+    gap: 12px;
+
+    margin-top: 30px;
+
+    flex-wrap: wrap;
+}
+
+.button {
+    padding: 13px 19px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-weight: 800;
+
+    border: 1px solid var(--border);
+
+    background: var(--card2);
+
+    color: white;
+
+    transition: .2s;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.button.primary {
+    background: var(--gold);
+    color: #191207;
+
+    border-color: var(--gold);
+
+    box-shadow: 0 10px 30px rgba(245,166,35,.18);
+}
+
+/* COIN */
+
+.coin-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.coin {
+    width: 310px;
+    height: 310px;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 115px;
+    font-weight: 1000;
+
+    color: #241707;
+
+    background:
+        radial-gradient(
+            circle at 35% 25%,
+            #ffe49a,
+            #f5a623 35%,
+            #a95800 75%,
+            #321b04
+        );
+
+    border: 2px solid rgba(255,220,130,.45);
+
+    box-shadow:
+        0 0 100px rgba(245,166,35,.18),
+        inset -35px -35px 70px rgba(0,0,0,.35);
+
+    transform: rotate(-8deg);
+}
+
+/* SECTIONS */
+
+section {
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 80px 22px;
+}
+
+.section-title {
+    font-size: 34px;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 10px;
+}
+
+.section-description {
+    color: var(--muted);
+
+    line-height: 1.6;
+
+    margin-bottom: 30px;
+}
+
+/* CARDS */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 16px;
+}
+
+.card {
+    padding: 24px;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.035),
+            rgba(255,255,255,.01)
+        ),
+        var(--card);
+
+    border: 1px solid var(--border);
+
+    transition: .2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+
+    border-color: #514126;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,.4);
+}
+
+.card-icon {
+    font-size: 28px;
+
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+/* OWNER */
+
+.owner {
+    display: grid;
+
+    grid-template-columns: 180px 1fr;
+
+    gap: 30px;
+
+    align-items: center;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+}
+
+.owner-avatar {
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--gold-light),
+            #b86a00
+        );
+
+    color: #211507;
+
+    font-size: 45px;
+
+    font-weight: 1000;
+
+    box-shadow:
+        0 0 40px rgba(245,166,35,.15);
+}
+
+.owner h3 {
+    font-size: 27px;
+
+    margin-bottom: 7px;
+}
+
+.owner-role {
+    color: var(--gold-light);
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    margin-bottom: 15px;
+}
+
+.owner p {
+    color: var(--muted);
+
+    line-height: 1.7;
+
+    max-width: 650px;
+}
+
+/* INFO */
+
+.info {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 16px;
+}
+
+.info-box {
+    padding: 25px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+}
+
+.info-box h3 {
+    margin-bottom: 10px;
+}
+
+.info-box p {
+    color: var(--muted);
+
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid var(--border);
+
+    padding: 35px 22px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+.footer-container {
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        padding-top: 70px;
+    }
+
+    .coin-area {
+        display: none;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .info {
+        grid-template-columns: 1fr;
+    }
+
+    .owner {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .owner-avatar {
+        margin: auto;
+    }
+
+    .footer-container {
+        flex-direction: column;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<div class="nav-container">
+
+<a href="#" class="logo">
+
+<span class="logo-icon">₿</span>
+
+! Bitcoins
+
+</a>
+
+<div class="nav-links">
+
+<a href="#about">About</a>
+
+<a href="#community">Community</a>
+
+<a href="#owner">Owner</a>
+
+<a href="#rules">Rules</a>
+
+</div>
+
+<!-- CHANGE THIS TO YOUR DISCORD INVITE -->
+
+<a
+class="discord-button"
+href="YOUR_DISCORD_INVITE_HERE"
+target="_blank"
+>
+Join Discord
+</a>
+
+</div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<main>
+
+<section class="hero">
+
+<div>
+
+<span class="badge">
+
+<span class="status"></span>
+
+Official Community
+
+</span>
+
+<h1>
+
+WELCOME TO
+
+<span class="gold">
+
+! BITCOINS
+
+</span>
+
+</h1>
+
+<p class="hero-text">
+
+Welcome to <b>! Bitcoins</b>, a Discord community built around
+gaming, Roblox, trading discussions, and a community of people
+who actually enjoy being here.
+
+Join the server, meet the community, and stay updated with
+everything happening inside ! Bitcoins.
+
+</p>
+
+<div class="buttons">
+
+<a
+href="https://discord.gg/5eARJs8w5"
+target="_blank"
+class="button primary"
+>
+Join the Discord →
+</a>
+
+<a
+href="#about"
+class="button"
+>
+Learn More
+</a>
+
+</div>
+
+</div>
+
+
+<div class="coin-area">
+
+<div class="coin">
+
+₿
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2 class="section-title">
+
+About ! Bitcoins
+
+</h2>
+
+<p class="section-description">
+
+A quick look at what the community is about.
+
+</p>
+
+<div class="cards">
+
+<div class="card">
+
+<div class="card-icon">🌟</div>
+
+<h3>BIG Rebranding!</h3>
+
+<p>
+
+A BIG Rebranding is in the server right now!. join 
+To see what's happening in the event!.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">💬</div>
+
+<h3>Active Discord</h3>
+
+<p>
+
+Chat with the community, participate in conversations,
+and keep up with what's happening around the server.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">🛡️</div>
+
+<h3>Community First</h3>
+
+<p>
+
+The server focuses on keeping the community organized,
+safe, and enjoyable for its members.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- COMMUNITY -->
+
+<section id="community">
+
+<h2 class="section-title">
+
+The Community
+
+</h2>
+
+<p class="section-description">
+
+More than just a Discord invite.
+
+</p>
+
+<div class="info">
+
+<div class="info-box">
+
+<h3>👥 Meet People</h3>
+
+<p>
+
+Talk with other members, make friends, and become
+part of the ! Bitcoins community.
+
+</p>
+
+</div>
+
+
+<div class="info-box">
+
+<h3>📢 Stay Updated</h3>
+
+<p>
+
+Keep an eye on announcements, events, server changes,
+and important community information.
+
+</p>
+
+</div>
+
+
+<div class="info-box">
+
+<h3>🎯 Community Events</h3>
+
+<p>
+
+Participate in activities and events organized within
+the server.
+
+</p>
+
+</div>
+
+
+<div class="info-box">
+
+<h3>⭐ Build Reputation</h3>
+
+<p>
+
+Be active, follow the rules, help other members,
+and become a recognized part of the community.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- OWNER -->
+
+<section id="owner">
+
+<h2 class="section-title">
+
+Server Owner
+
+</h2>
+
+<p class="section-description">
+
+Meet the person behind the community.
+
+</p>
+
+<div class="owner">
+
+<div class="owner-avatar">
+
+!
+
+</div>
+
+<div>
+
+<h3>!bitcoin</h3>
+
+<div class="owner-role">
+
+OWNER · ! BITCOINS
+
+</div>
+
+<p>
+
+!bitcoin is the owner and creator of the ! Bitcoins
+Discord community, responsible for managing the server,
+building the community, and keeping everything running.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- RULES -->
+
+<section id="rules">
+
+<h2 class="section-title">
+
+Community Rules
+
+</h2>
+
+<p class="section-description">
+
+Keep the server enjoyable for everyone.
+
+</p>
+
+<div class="cards">
+
+<div class="card">
+
+<div class="card-icon">🤝</div>
+
+<h3>Respect Others</h3>
+
+<p>
+
+Treat other members with respect. Harassment,
+targeted abuse, and unnecessary drama aren't welcome.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">🚫</div>
+
+<h3>No Scamming</h3>
+
+<p>
+
+Do not attempt to scam, impersonate, or deceive
+other members.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">📜</div>
+
+<h3>Follow Discord Rules</h3>
+
+<p>
+
+Follow the official Discord Terms of Service,
+Community Guidelines, and the server's own rules.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- JOIN -->
+
+<section>
+
+<div
+style="
+text-align:center;
+padding:55px 25px;
+border:1px solid var(--border);
+border-radius:20px;
+background:
+radial-gradient(circle at center,rgba(245,166,35,.09),transparent 60%),
+var(--card);
+"
+>
+
+<h2 style="font-size:36px;margin-bottom:12px;">
+
+Ready to join?
+
+</h2>
+
+<p
+style="
+color:var(--muted);
+margin-bottom:25px;
+"
+>
+
+Come hang out with the ! Bitcoins community.
+
+</p>
+
+<a
+href="https://discord.gg/5eARJs8w5"
+target="_blank"
+class="button primary"
+>
+
+Join ! Bitcoins
+
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-container">
+
+<span>
+
+© 2026 ! Bitcoins · Community Website
+
+</span>
+
+<span>
+
+Not affiliated with Roblox Corporation or Discord Inc.
+
+</span>
+
+</div>
+
+</footer>
+
+</body>
+</html>
